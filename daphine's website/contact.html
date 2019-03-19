@@ -1,0 +1,77 @@
+<!DOCTYPE>
+<html lang="en">
+<head>
+    <title>www.namdaphtech.com</title>
+	<link rel= "stylesheet" type= "text/css" href= "css/contact.css"/>
+	<link rel= "icon" type= "favicon" href= "images/favicon.icon"
+</head>
+<body>
+    <div id= "container">
+	    <img src= "images/d.png"/>
+	<div id= "navigation">
+	    <ul id= "navmenu">
+		<li><a href= "home.html">Home</a></li>
+		<li><a href= "whatwedo.html">What we do</a></li>
+		<li><a href= "contact.html">Contact us</a></li>
+		</ul>
+	</div>
+	<div id= "banner">
+	  <div class= "contact-title">
+	     
+		 <h1>We are always ready to serve you!</h1>
+	  
+	  </div>
+	  
+	  <div id="contact-form">
+	     <?php 
+	
+	
+	     ?>
+	     <form id= "contact-form" method= "post" action= "">
+		     <input name= "name" type= "text" class= "form-control" placeholder= "Your name required"></br>
+		      <input name= "email" type= "email" class= "form-control" placeholder= "Your email required"></br>
+			   <textarea name= "message" class= "form-control" placeholder= " Message" rows= "4 required"></textarea>
+			    <input type= "submit" class= "form-control submit" value= "SEND MESSAGE"></br>	
+		 </form>
+		 <?php
+         
+         if(isset($_P0ST['submit'])){
+		    if(empty($_P0ST["message"]))
+			{
+			  "please enter your name, email and message"
+			 
+			}else
+			{
+			 $to= "namagembedaphine@gmail.com";
+			 $subject= "form-Tutorial";
+			 $name_field= $_P0ST['first_name'];
+			 $email_field= $_P0ST['email'];
+			 $message= $_P0ST['message'];
+			 $body= "from:$name_field\n E-mail:$email_field\n message:\n $message";
+			 $success= mail($to, $subject, $body);
+			 if($success)
+			 {
+			     $url= "http://www.namagembedaphine@gmail.com";
+				 Header("Location:" .$url)
+			 }else
+			 {
+			     die("message cannot be sent");
+			 }
+			}
+		 }	 
+	
+	
+	     ?>
+	  </div>
+       
+  
+	</div>
+	<div id= "context-area"></div>
+	<div id= "slidebar"></div>
+	<div id= "footer">
+	     <p>All rights Reserved.</p>
+	</div>
+	</div>
+ 
+</body>
+</html>
