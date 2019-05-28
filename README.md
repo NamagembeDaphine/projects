@@ -1,1 +1,1 @@
-# projects,, this repository contains some of the project codes i have done.
+# projects,, this repository contains some of the project code i have done.
